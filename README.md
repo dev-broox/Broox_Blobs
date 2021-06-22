@@ -35,7 +35,7 @@ window.broox_blobs.setTouchTarget(document.getElementById("my_custom_target"))
 
 ### Input
 
-By default the library starts listening to incoming osc messages. When it receives a messages with a supported address, it only listens to this address and discards messages with other addresses.
+By default the library starts listening to incoming osc messages. When it receives a message with a supported address, it only listens to this address and discards messages with other addresses.
 
 If you what to customize this behaviour:
 

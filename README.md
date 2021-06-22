@@ -64,6 +64,10 @@ To set a custom transform:
 window.broox_blobs.setActiveArea(x, y, width, height)
 ```
 
+For example:
+
+If the osc input x position is `0.5`, the output x coordinate for this blob is: `0.5 * area.width + area.x`
+
 ### Active Blobs
 
 ```js

@@ -12,11 +12,11 @@ function BrooxBlobs() {
 
 
     /*
-        touchTarget = document // default window
+        touchTarget = document // default: window
         inputs = [
             {
                 address: "/tuio/2Dcur",
-                touchEvents: false, // default true
+                touchEvents: false, // default: true
             }
         ]
     */

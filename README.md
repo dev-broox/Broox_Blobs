@@ -1,6 +1,12 @@
 # Broox Blobs
 Js library that receives osc blob data and dispatches native browser touch events
 
+## Build
+
+```
+npm run build
+
+
 ## How to use it?
 
 Add the library to you project

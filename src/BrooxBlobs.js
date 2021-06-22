@@ -19,10 +19,8 @@ function BrooxBlobs() {
                 touchEvents: false, // default true
             }
         ]
-
     */
-
-    this.setInput = function(inputs = [], touchEventsTarget = window){
+    this.setInput = function(inputs = [], touchEventsTarget = null){
         controllers = new Map();
         defaultAddress = null;
         defaultController = null;
@@ -46,11 +44,12 @@ function BrooxBlobs() {
             controllers.set(address, controller)
         }
 
-        this.setTouchTarget(touchEventsTarget);
+        this.setTouchTarget(touchEventsTarget ? touchEventsTarget : touchTarget);
     }
     
     this.setTouchTarget = function(target) {
-        console.log(`Broox Blobs set touch target: ${target}`);
+        if(!target) {return;}
+
         touchTarget = target;
 
         loopControllers( controller => {
@@ -59,8 +58,6 @@ function BrooxBlobs() {
     }
 
     this.setActiveArea = function(x, y, width, height) {
-        console.log(`Broox Blobs set active area: `, x, y, width, height);
-
         loopControllers( controller => {
             controller.setActiveArea(x, y, width, height);
         });

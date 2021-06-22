@@ -23,8 +23,6 @@ function BlobItemsController_blob(touchTarget, onAdded, onDeleted) {
         }
 
         if (!this.activeItems.has(id)) {
-            console.log(`${id} is not included in`)
-            console.log(this.activeItems);
             let blob = new Blob_blob(id, itemData.classId);
             this.activeItems.set(id, blob);
             blob.update(itemData);

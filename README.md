@@ -20,7 +20,7 @@ or
 
 ```js
 import BrooxBlobs from './broox/broox-blobs'
-
+```
 
 
 This will initialize the library and add the object to the window: `window.broox_blobs`. 

@@ -52,7 +52,7 @@ window.broox_blobs.setInput([
 ]);
 ```
 
-In this example we accept incoming messages for `/tuio/skel` and `"/tuio/2Dblb`, but we only dispatch touches for `/tuio/skel`
+In this example we accept incoming messages for `/tuio/skel` and `/tuio/2Dblb`, but we only dispatch touches for `/tuio/skel`
 
 ### Active Area
 

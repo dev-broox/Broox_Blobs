@@ -8,7 +8,7 @@ export function decodeSet_skel(address, args, activeArea) {
 
     let offset = activeArea.offset;
     let width = activeArea.width;
-    let height = activeArea.width;
+    let height = activeArea.height;
 
     data.hand_left = {
         x: args[2],

@@ -62,5 +62,17 @@ To set a custom transform:
 
 ```js
 window.broox_blobs.setActiveArea(x, y, width, height)
+```
+
+### Active Blobs
+
+```js
+window.broox_blobs.getActiveItems("/tuio/2Dblb")
+```
+
+Returns the list of active blobs for a given address. If you don't set the address it will return the blobs for the first address it is listening to.
+```js
+window.broox_blobs.getActiveItems()
+```
 
 

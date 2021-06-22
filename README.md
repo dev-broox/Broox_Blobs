@@ -5,7 +5,9 @@ Js library that receives osc blob data and dispatches native browser touch event
 
 Add the library to you project
 
-`<script src="broox/broox-blobs.js"></script>`
+```html
+<script src="broox/broox-blobs.js"></script>
+```
 
 This will initialize the library and add the object to the window: `window.broox_blobs`. 
 By default the library will start listening to incoming messages.
@@ -27,7 +29,9 @@ The default behaviour is to dispatch the touch event to the [window](https://dev
 
 To set a custom target:
 
-`window.broox_blobs.setTouchTarget(document.getElementById("my_custom_target"))`
+```js
+window.broox_blobs.setTouchTarget(document.getElementById("my_custom_target"))
+```
 
 ### Input
 

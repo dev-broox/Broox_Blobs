@@ -54,3 +54,13 @@ window.broox_blobs.setInput([
 
 In this example we accept incoming messages for `/tuio/skel` and `"/tuio/2Dblb`, but we only dispatch touches for `/tuio/skel`
 
+### Active Area
+
+The active area defines the blob coordinates and size transform. By default the area is the window (`window.innerWidth`, `window.innerHeight`).
+
+To set a custom transform:
+
+```js
+window.broox_blobs.setActiveArea(x, y, width, height)
+
+

@@ -5,6 +5,7 @@ Js library that receives osc blob data and dispatches native browser touch event
 
 ```
 npm run build
+```
 
 
 ## How to use it?

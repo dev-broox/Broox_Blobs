@@ -10,7 +10,7 @@ npm run build
 
 ## How to use it?
 
-Add the library to you project
+Add the library to your project
 
 ```html
 <script src="broox/broox-blobs.js"></script>

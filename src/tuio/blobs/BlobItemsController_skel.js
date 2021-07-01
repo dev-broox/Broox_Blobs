@@ -13,8 +13,8 @@ function BlobItemsController_skel(touchTarget, onAdded, onDeleted) {
         touchesController.setTouchTarget(target);
     }
 
-    this.updateSet = function(address, args, activeArea) {
-        let itemData = decodeSet(address, args, activeArea);
+    this.updateSet = function(address, args, blobsSpaceTransform) {
+        let itemData = decodeSet(address, args, blobsSpaceTransform);
 
         let id = itemData.id;
         if(!id) {

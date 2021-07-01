@@ -45,8 +45,6 @@ function TouchesController(target = window) {
             id = activeBlobTouches.get(blob.id);
         }
 
-        
-
         let extraProperties = extraTouchProperties ? extraTouchProperties(blob) : {};
         let properties = Object.assign({
             identifier: id,

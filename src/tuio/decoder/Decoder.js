@@ -1,14 +1,14 @@
 import OSCMessageAddress from "../../OSCMessageAddress";
 
-export function decodeSet_skel(address, args, activeArea) {
+export function decodeSet_skel(address, args, blobsSpaceTransform) {
     var data = {};
     data.id = args[1].toString();
 
     let scale = args[6];
 
-    let offset = activeArea.offset;
-    let width = activeArea.width;
-    let height = activeArea.height;
+    let offset = blobsSpaceTransform.offset;
+    let width = blobsSpaceTransform.width;
+    let height = blobsSpaceTransform.height;
 
     data.hand_left = {
         x: args[2],
@@ -44,7 +44,7 @@ function isSkelJointDetected(joint){
 
 
 
-export function decodeSet_blob(address, args, activeArea) {
+export function decodeSet_blob(address, args, blobsSpaceTransform) {
     const BlobData = {
         type: null,
         id: "",
@@ -59,9 +59,9 @@ export function decodeSet_blob(address, args, activeArea) {
         timeAlive: 0
     }
 
-    let offset = activeArea.offset;
-    let width = activeArea.width;
-    let height = activeArea.height;
+    let offset = blobsSpaceTransform.offset;
+    let width = blobsSpaceTransform.width;
+    let height = blobsSpaceTransform.height;
 
     var blobData = Object.assign({}, BlobData);
     blobData.id = args[1].toString();

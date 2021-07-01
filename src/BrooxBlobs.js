@@ -10,7 +10,6 @@ function BrooxBlobs() {
 
     let touchTarget = window;
 
-
     /*
         touchTarget = document // default: window
         inputs = [
@@ -57,14 +56,14 @@ function BrooxBlobs() {
         });
     }
 
-    this.setActiveArea = function(x, y, width, height) {
+    this.setBlobsSpaceTransform = function(x, y, width, height) {
         loopControllers( controller => {
-            controller.setActiveArea(x, y, width, height);
+            controller.setBlobsSpaceTransform(x, y, width, height);
         });
     }
 
     this.setTouchEventsEnabled = function(isEnabled, address = null) {
-        let controller = getControllerFor(address);
+        let controller = this.getController(address);
 
         if(controller) {
             controller.setTouchEventsEnabled(isEnabled)
@@ -72,13 +71,27 @@ function BrooxBlobs() {
     }
 
     this.getActiveItems = function(address = null) {
-        let controller = getControllerFor(address);
+        let controller = this.getController(address);
 
         if(!controller) {
             return new Map();
         }
 
         return controller.getActiveItems();
+    }
+
+    this.getController = function(address = null) {
+        if(!address && defaultController) {
+            return defaultController
+        }
+        else if(!address && defaultAddress) {
+            return controllers.get(defaultAddress)
+        }
+        else if(address){
+            return controllers.get(address);
+        }
+
+        return null;
     }
 
     init();
@@ -153,19 +166,6 @@ function BrooxBlobs() {
         }
     }
 
-    function getControllerFor(address) {
-        if(!address && defaultController) {
-            return defaultController
-        }
-        else if(!address && defaultAddress) {
-            return controllers.get(defaultAddress)
-        }
-        else if(address){
-            return controllers.get(address);
-        }
-
-        return null;
-    }
 
     //
     // send touches
@@ -178,8 +178,7 @@ function BrooxBlobs() {
 
     function sendTouchesMoved(touchesChanged, touchesAll) {
         if(touchesChanged.length == 0){return;}
-        console.log(touchTarget);
-        console.log(touchesChanged);
+        console.log(touchesAll);
         touchTarget.dispatchEvent(event("touchmove", touchesChanged, touchesAll));
     }
 

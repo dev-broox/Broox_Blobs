@@ -1,15 +1,17 @@
 const path = require('path');
+var PACKAGE = require('./package.json');
+var version = PACKAGE.version;
 
 module.exports = {
     mode: "production",
     entry: './src/index.js',
     output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'broox-blobs.js',
-    library: {
-        name: 'brooxBlobsLibrary',
-        type: 'umd',
-    },
+        path: path.resolve(__dirname, 'dist'),
+        filename: `broox-blobs-${version}.js`,
+        library: {
+            name: 'brooxBlobsLibrary',
+            type: 'umd',
+        },
     },
     externals: {
         lodash: {
@@ -18,5 +20,5 @@ module.exports = {
             amd: 'lodash',
             root: '_',
         },
-    },
+    }
 };

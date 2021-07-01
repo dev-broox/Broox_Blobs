@@ -14,7 +14,7 @@ function TUIOBlobs(oscMessageAddress) {
     let touchTarget = window;
     let touchEventsEnabled = true;
 
-    let activeArea = {
+    let blobsSpaceTransform = {
         width: window.innerWidth,
         height: window.innerHeight,
         offset: {x: 0, y: 0}
@@ -51,10 +51,10 @@ function TUIOBlobs(oscMessageAddress) {
         }
     }
 
-    this.setActiveArea = function(x, y, width, height) {
-        activeArea.width = width;
-        activeArea.height = height;
-        activeArea.offset = {x, y};
+    this.setBlobsSpaceTransform = function(x, y, width, height) {
+        blobsSpaceTransform.width = width;
+        blobsSpaceTransform.height = height;
+        blobsSpaceTransform.offset = {x, y};
     }
 
     this.getMessageAddress = function() {
@@ -89,7 +89,7 @@ function TUIOBlobs(oscMessageAddress) {
                     break;
 
                 case "set":
-                    itemsController.updateSet(address, args, activeArea);
+                    itemsController.updateSet(address, args, blobsSpaceTransform);
                     break;
 
                 case "alive":
@@ -144,13 +144,11 @@ function TUIOBlobs(oscMessageAddress) {
     }
 
     function onItemAdded(id, x, y){
-        console.log("ON ITEM ADDED: "+ id);
         if(self.onAdded == null){return;}
         self.onAdded(id, x, y);
     }
 
     function onItemDeleted(id){
-        console.log("ON ITEM DELETED: "+ id);
         if(self.onDeleted == null){return;}
         self.onDeleted(id);
     }

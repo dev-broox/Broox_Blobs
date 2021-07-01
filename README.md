@@ -68,14 +68,14 @@ window.broox_blobs.setInput([
 
 In this example we accept incoming messages for `/tuio/skel` and `/tuio/2Dblb`, but we only dispatch touches for `/tuio/skel`
 
-### Active Area
+### Blobs Space Transform
 
-The active area defines the blob coordinates and size transform. By default the area is the window (`window.innerWidth`, `window.innerHeight`).
+The Blobs Space Transform defines the blob coordinates and size transform. By default the space is the window (`window.innerWidth`, `window.innerHeight`).
 
 To set a custom transform:
 
 ```js
-window.broox_blobs.setActiveArea(x, y, width, height)
+window.broox_blobs.setBlobsSpaceTransform(x, y, width, height)
 ```
 
 For example:
@@ -91,6 +91,24 @@ window.broox_blobs.getActiveItems("/tuio/2Dblb")
 Returns the list of active blobs for a given address. If you don't set the address it will return the blobs for the first address it is listening to.
 ```js
 window.broox_blobs.getActiveItems()
+```
+
+### Blobs Controller
+
+```js
+window.broox_blobs.getController("/tuio/2Dblb")
+```
+
+Returns the blobs controller for a given address. If you don't set the address it will return the controller for the first address it is listening to.
+```js
+window.broox_blobs.getController()
+```
+
+### Tuio Frame Update
+
+```js
+const blobsController = window.broox_blobs.getController()
+blobsController.onFrameUpdate = (id) => {};
 ```
 
 
